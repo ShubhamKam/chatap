@@ -12,17 +12,17 @@ globs: *
 - Android SDK (API level 21 or higher)
 - Kotlin/Java
 - Retrofit (version 2.9.0)
-- OkHttp (version 4.9.1)
+- OkHttp (version 4.9.1, 4.11.0)
 - Ollama Client Library
 - Python for Android
 - Chaquopy
 - WebView
 - Room Database
 - GitHub Actions
-- Java Development Kit (JDK) 11
-- Android Gradle Plugin (AGP) 7.4.2
-- Gradle 7.5
-- Kotlin 1.8.0
+- Java Development Kit (JDK) 11, 17
+- Android Gradle Plugin (AGP) 7.4.2, 8.0.2, 8.1.4
+- Gradle 7.5, 7.6.1, 8.0, 8.4
+- Kotlin 1.8.0, 1.8.20, 1.9.10
 
 ## PROJECT STRUCTURE
 - Standard Android project structure with `src/main/java/com/ai/chat` for Kotlin code, `src/main/res/layout` for layouts, and `src/main/res/values` for resources.
@@ -62,8 +62,8 @@ globs: *
 - Before pushing to the main branch, ensure all code is tested and reviewed.
 - The GitHub Actions workflow should be configured to build the APK upon pushing to the main branch. The generated APK should be uploaded as an artifact for easy download.
 - The GitHub Actions workflow must:
-    - Use `actions/checkout@v3`.
-    - Use `actions/setup-java@v3` with `distribution: 'temurin'`.
-    - Use `android-actions/setup-android@v2`.
+    - Use `actions/checkout@v3`, `actions/checkout@v4`.
+    - Use `actions/setup-java@v3`, `actions/setup-java@v4` with `distribution: 'temurin'`.
+    - Use `android-actions/setup-android@v2`, `android-actions/setup-android@v3`.
     - Grant execute permission for `gradlew`.
-    - Upload APK using `actions/upload-artifact@v3`.
+    - Upload APK using `actions/upload-artifact@v3`, `actions/upload-artifact@v4`.
