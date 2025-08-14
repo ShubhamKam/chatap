@@ -7,7 +7,7 @@ globs: *
 
 ## PROJECT DOCUMENTATION & CONTEXT SYSTEM
 - Project plans are documented in markdown files within the project directory. These files include stories, tasks, subtasks, features, and dependencies.
-- The `ProjectPlan.md` file serves as context for the AI agent to ensure alignment with project goals and requirements. It is updated automatically when new features are added.
+- The `ProjectPlan.md` file serves as context for the AI agent to ensure alignment with project goals and requirements. It is updated automatically when new features are added or tasks are completed.
 
 ## TECH STACK
 - Android SDK
@@ -34,6 +34,7 @@ globs: *
 ## CODING STANDARDS
 - Follow Kotlin coding conventions for Android development.
 - API keys must be stored securely and not directly in the code. Consider using environment variables or secure storage mechanisms.
+- When including Python code, use markdown formatting with ```python to delineate code blocks.
 
 ## NAMING CONVENTIONS
 
@@ -52,3 +53,4 @@ globs: *
 - Use GitHub Actions for automated builds and APK generation.
 - The `build.yml` file in the `.github/workflows` directory defines the workflow for building the APK.
 - Before pushing to the main branch, ensure all code is tested and reviewed.
+- The GitHub Actions workflow should be configured to build the APK upon pushing to the main branch. The generated APK should be uploaded as an artifact for easy download.
