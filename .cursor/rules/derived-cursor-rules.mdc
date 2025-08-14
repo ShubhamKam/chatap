@@ -1,0 +1,54 @@
+---
+description: AI rules derived by SpecStory from the project AI interaction history
+globs: *
+---
+
+<headers/>
+
+## PROJECT DOCUMENTATION & CONTEXT SYSTEM
+- Project plans are documented in markdown files within the project directory. These files include stories, tasks, subtasks, features, and dependencies.
+- The `ProjectPlan.md` file serves as context for the AI agent to ensure alignment with project goals and requirements. It is updated automatically when new features are added.
+
+## TECH STACK
+- Android SDK
+- Kotlin/Java
+- Retrofit (version 2.9.0)
+- OkHttp (version 4.9.1)
+- Ollama Client Library
+- Python for Android
+- Chaquopy
+- WebView
+- Room Database
+- GitHub Actions
+
+## PROJECT STRUCTURE
+- Standard Android project structure with `src/main/java/com/ai/chat` for Kotlin code, `src/main/res/layout` for layouts, and `src/main/res/values` for resources.
+- The project structure follows a modular approach:
+    - `api/`: API services for cloud LLMs.
+    - `ollama/`: Ollama integration for local models.
+    - `code/`: Code execution services.
+    - `storage/`: File management services.
+    - `error/`: Error resolution services.
+    - `ui/`: Jupyter-like rendering.
+
+## CODING STANDARDS
+- Follow Kotlin coding conventions for Android development.
+- API keys must be stored securely and not directly in the code. Consider using environment variables or secure storage mechanisms.
+
+## NAMING CONVENTIONS
+
+## ERROR HANDLING
+- Implement comprehensive error handling for API calls, code execution, and file management.
+- Provide user-friendly error messages and suggestions for fixes.
+
+## DEBUGGING
+- Use Android Studio's debugging tools for identifying and resolving issues.
+
+## SECURITY
+- Sanitize user inputs to prevent code injection attacks.
+- Ensure secure storage of code files and API keys.
+
+## WORKFLOW & RELEASE RULES
+- Use GitHub Actions for automated builds and APK generation.
+- The `build.yml` file in the `.github/workflows` directory defines the workflow for building the APK.
+- Before pushing to the main branch, ensure all code is tested and reviewed.
