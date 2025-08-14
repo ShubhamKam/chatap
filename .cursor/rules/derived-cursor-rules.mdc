@@ -22,7 +22,6 @@ globs: *
 - Java Development Kit (JDK) 11, 17
 - Android Gradle Plugin (AGP) 7.4.2, 8.0.2, 8.1.4
 - Gradle 7.5, 7.6.1, 8.0, 8.4, 7.5.1
-- Kotlin 1.8.0, 1.8.20, 1.9.10, 1.8.10
 
 ## PROJECT STRUCTURE
 - Standard Android project structure with `src/main/java/com/ai/chat` for Kotlin code, `src/main/res/layout` for layouts, and `src/main/res/values` for resources.
