@@ -3,8 +3,6 @@ description: AI rules derived by SpecStory from the project AI interaction histo
 globs: *
 ---
 
-<headers/>
-
 ## PROJECT DOCUMENTATION & CONTEXT SYSTEM
 - Project plans are documented in markdown files within the project directory. These files include stories, tasks, subtasks, features, and dependencies.
 - The `ProjectPlan.md` file serves as context for the AI agent to ensure alignment with project goals and requirements. It is updated automatically when new features are added or tasks are completed.

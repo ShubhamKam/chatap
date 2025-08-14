@@ -12,6 +12,7 @@ jobs:
     
     env:
       SKIP_JDK_VERSION_CHECK: true
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false"
     
     steps:
     - name: Checkout code
@@ -30,10 +31,10 @@ jobs:
       run: chmod +x ./gradlew
       
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --no-daemon
       
     - name: Build APK
-      run: ./gradlew assembleRelease
+      run: ./gradlew assembleRelease --no-daemon
       
     - name: Upload APK
       uses: actions/upload-artifact@v4
