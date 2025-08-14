@@ -8,9 +8,10 @@ globs: *
 ## PROJECT DOCUMENTATION & CONTEXT SYSTEM
 - Project plans are documented in markdown files within the project directory. These files include stories, tasks, subtasks, features, and dependencies.
 - The `ProjectPlan.md` file serves as context for the AI agent to ensure alignment with project goals and requirements. It is updated automatically when new features are added or tasks are completed.
+- The project documentation should include setup instructions, prerequisites, installation guides, and usage examples.
 
 ## TECH STACK
-- Android SDK
+- Android SDK (API level 21 or higher)
 - Kotlin/Java
 - Retrofit (version 2.9.0)
 - OkHttp (version 4.9.1)
@@ -20,6 +21,10 @@ globs: *
 - WebView
 - Room Database
 - GitHub Actions
+- Java Development Kit (JDK) 11
+- Android Gradle Plugin (AGP) 7.4.2
+- Gradle 7.5
+- Kotlin 1.8.0
 
 ## PROJECT STRUCTURE
 - Standard Android project structure with `src/main/java/com/ai/chat` for Kotlin code, `src/main/res/layout` for layouts, and `src/main/res/values` for resources.
@@ -35,6 +40,10 @@ globs: *
 - Follow Kotlin coding conventions for Android development.
 - API keys must be stored securely and not directly in the code. Consider using environment variables or secure storage mechanisms.
 - When including Python code, use markdown formatting with ```python to delineate code blocks.
+- Use `mavenCentral()` repository instead of `jcenter()` in `build.gradle` files.
+- Ensure `gradle-wrapper.jar` is present in `gradle/wrapper/`.
+- Ensure `gradlew.bat` is present for Windows compatibility.
+- Update `build.gradle` files to use plugins block.
 
 ## NAMING CONVENTIONS
 
@@ -51,6 +60,12 @@ globs: *
 
 ## WORKFLOW & RELEASE RULES
 - Use GitHub Actions for automated builds and APK generation.
-- The `build.yml` file in the `.github/workflows` directory defines the workflow for building the APK.
+- The `build.yml` file in the `.github/workflows/` directory defines the workflow for building the APK.
 - Before pushing to the main branch, ensure all code is tested and reviewed.
 - The GitHub Actions workflow should be configured to build the APK upon pushing to the main branch. The generated APK should be uploaded as an artifact for easy download.
+- The GitHub Actions workflow must:
+    - Use `actions/checkout@v3`.
+    - Use `actions/setup-java@v3` with `distribution: 'temurin'`.
+    - Use `android-actions/setup-android@v2`.
+    - Grant execute permission for `gradlew`.
+    - Upload APK using `actions/upload-artifact@v3`.
